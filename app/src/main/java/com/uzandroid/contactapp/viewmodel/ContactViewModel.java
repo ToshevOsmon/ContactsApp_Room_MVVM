@@ -14,7 +14,9 @@ public class ContactViewModel extends AndroidViewModel {
 
     private ContactRepository repository;
     private LiveData<List<UsersContact>> contacts;
+        ////
 
+    // osmon o'zgartirgan joy
     public ContactViewModel(@NonNull Application application) {
         super(application);
 
