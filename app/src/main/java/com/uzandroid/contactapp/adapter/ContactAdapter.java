@@ -8,11 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+import com.uzandroid.contactapp.R;
+import com.uzandroid.contactapp.conventer.ImageConverter;
 import com.uzandroid.contactapp.model.UsersContact;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static com.uzandroid.contactapp.R.*;
 
 
@@ -45,6 +52,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         holder.textPhone.setText(contact.getPhone());
         holder.textUssd.setText(contact.getUssd());
 
+holder.image_item_id.setImageBitmap(ImageConverter.toBitmap(contact.getImageUrl()));
+
+
         holder.callPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +74,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         return contacts.size();
     }
 
+
+
+    public void filterList(ArrayList<UsersContact> fileredList){
+
+        contacts = fileredList;
+        notifyDataSetChanged();
+    }
+
     public void setContacts(List<UsersContact> contacts) {
         this.contacts = contacts;
         notifyDataSetChanged();
@@ -78,11 +96,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         private ImageView callPhone;
         private TextView textName;
         private TextView textPhone, textUssd;
+        private ImageView image_item_id;
 
 
         ContactHolder(@NonNull View itemView) {
             super(itemView);
-
+            image_item_id = itemView.findViewById(id.image_item_id);
             callPhone = itemView.findViewById(id.image_call_Phone_id);
             textName = itemView.findViewById(id.text_name_id);
             textPhone = itemView.findViewById(id.text_phone_id);
@@ -141,10 +160,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         void onItemClickActivity(UsersContact contact);
 
     }
-//delete button
+
+    //delete button
     public interface OnItemDeleteListener {
         void onItemClickDelete(UsersContact contact);
     }
+
     //edit button
     public interface OnItemEditListener {
         void onItemClickEdit(UsersContact contact);

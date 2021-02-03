@@ -6,10 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.uzandroid.contactapp.conventer.ImageConverter;
 import com.uzandroid.contactapp.model.UsersContact;
 
 @Database(entities = {UsersContact.class}, version = 1, exportSchema = false)
+@TypeConverters(ImageConverter.class)
 public abstract class ContactDatabase extends RoomDatabase {
 
     private static ContactDatabase instance;
@@ -21,11 +25,11 @@ public abstract class ContactDatabase extends RoomDatabase {
 
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     ContactDatabase.class,
-                    "contacts__DB")
+                    "_ContactsDB")
                     .allowMainThreadQueries()
 
                     //addCallBack ma'lumotni bazaga qo'shib quyadi
-                    .addCallback(callback)
+                   // .addCallback(callback)
                     .build();
 
         }
@@ -52,7 +56,7 @@ public abstract class ContactDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            contactDao.insertContact(new UsersContact("Osmon","946530255","toshev.osmon@gmail.com","Ucell"));
+           // contactDao.insertContact(new UsersContact("Osmon","946530255","toshev.osmon@gmail.com","Ucell",null));
             return null;
         }
     }

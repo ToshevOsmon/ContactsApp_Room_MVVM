@@ -13,13 +13,14 @@ public class ImageConverter {
     public static byte[] fromBitmap(Bitmap bitmap) {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0, outputStream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
         return outputStream.toByteArray();
 
     }
 
 @TypeConverter
     public static Bitmap toBitmap(byte[] images) {
+
         return BitmapFactory.decodeByteArray(images, 0, images.length);
 
     }

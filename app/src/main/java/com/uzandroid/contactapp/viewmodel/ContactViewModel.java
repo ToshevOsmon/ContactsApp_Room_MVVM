@@ -18,12 +18,10 @@ public class ContactViewModel extends AndroidViewModel {
     public ContactViewModel(@NonNull Application application) {
         super(application);
 
-
         repository = new ContactRepository(application);
         contacts = repository.getAllContacts();
 
     }
-
 
     public void insertContact(UsersContact contact) {
         repository.insertContact(contact);

@@ -1,10 +1,13 @@
 package com.uzandroid.contactapp.model;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users_contact")
-public class UsersContact {
+public final class UsersContact {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -15,17 +18,30 @@ public class UsersContact {
     private String email;
 
     private String ussd;
+@ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    private byte[] imageUrl;
 
     public UsersContact() {
 
     }
-
-    public UsersContact(String name, String phone, String email, String ussd) {
+    @Ignore
+    public UsersContact(String name, String phone, String email, String ussd,byte[] imageUrl) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.ussd = ussd;
+        this.imageUrl = imageUrl;
     }
+
+
+    public byte[] getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(byte[] imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 
     public String getUssd() {
         return ussd;

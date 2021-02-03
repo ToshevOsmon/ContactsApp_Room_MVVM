@@ -18,7 +18,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"
+            android:background="@color/cardviewbackcolor"
             app:cardCornerRadius="15dp"
             >
 
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="#fff"
+                android:background="@color/itemlayoutbackcolor"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -63,15 +63,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:text="Osmon"
-                            android:textColor="#000"
+                            android:text="@string/item_tv_osmon"
+                            android:textColor="@color/tvnamecolor"
                             android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/text_phone_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="46530255"
+                            android:text="@string/item_tv_46530255"
+                            android:textColor="@color/tvphonecolor"
                             android:textSize="16sp" />
 
                         <TextView
@@ -79,8 +80,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="ucell"
-                            android:textColor="#448AFF"
+                            android:text="@string/item_tv_ucell"
+                            android:textColor="@color/tvussdcolor"
                             android:textSize="16sp" />
 
                     </LinearLayout>

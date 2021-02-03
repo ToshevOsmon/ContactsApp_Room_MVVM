@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="@color/backcolor"
     tools:context=".AddEditActivity">
 
 
     <LinearLayout
         android:padding="2dp"
-        android:background="#BF000000"
+        android:background="@color/addimagebackcolor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -40,9 +40,9 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="24dp"
-        android:hint="Name"
+        android:hint="@string/etname"
         android:inputType="textCapSentences"
-        android:textColor="#000"
+        android:textColor="@color/etnamecolor"
         android:textSize="24sp" />
 
 
@@ -53,9 +53,9 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="24dp"
-        android:hint="Number"
+        android:hint="@string/etnumber"
         android:inputType="phone"
-        android:textColor="#000"
+        android:textColor="@color/etphonecolor"
         android:textSize="24sp" />
 
     <EditText
@@ -65,16 +65,16 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="24dp"
-        android:hint="Email"
+        android:hint="@string/etemail"
         android:inputType="textEmailAddress"
-        android:textColor="#000"
+        android:textColor="@color/etemailcolor"
         android:textSize="24sp" />
 
     <Button
         android:padding="10dp"
         android:background="@drawable/save_button_bg"
-        android:text="Save Contact"
-        android:textColor="#FFEB3B"
+        android:text="@string/btn_save_contact"
+        android:textColor="@color/btnsavecolor"
         android:textSize="24sp"
         android:id="@+id/button_save_id"
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@
     <color name="etnamecolor">#000</color>
     <color name="etphonecolor">#000</color>
     <color name="etemailcolor">#000</color>
-    <color name="btnsavecolor">#FF9800</color>
+    <color name="btnsavecolor">#FFEB3B</color>
     <color name="infoactivitybackcolor">#1A000000</color>
     <color name="infonamecolor">#000000</color>
     <color name="infophonecolor">#BF000000</color>
@@ -20,5 +20,5 @@
     <color name="itemlayoutbackcolor">#fff</color>
     <color name="tvnamecolor">#000</color>
     <color name="tvphonecolor">#88000000</color>
-    <color name="tvussdcolor">#9C27B0</color>
+    <color name="tvussdcolor">#448AFF</color>
 </resources>

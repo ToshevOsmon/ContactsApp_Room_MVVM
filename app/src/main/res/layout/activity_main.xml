@@ -4,10 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="8dp"
-    android:paddingTop="8dp"
-    android:paddingRight="8dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:background="@color/mainactivitybackcolor"
+    android:paddingTop="2dp"
     tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="2dp"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:hint="Search"
+
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:typeface="monospace"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button_Id"
@@ -24,8 +45,9 @@
         android:id="@+id/recycler_view_Id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_contact" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchId" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
